@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{site.title}}{% if data.subtitle %} &bull; {{data.subtitle}}{% endif %}</title>
+	<title>{{site.title}}{% if data.subtitle %} &bull; {{data.subtitle}}{% endif %}</title>
 
     <!-- Bootstrap CSS -->
     <!-- <link id="theme_css" href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -83,4 +83,8 @@
         </li>
         {% endfor %}
     </ul>
+    {% endif %}
+
+    {% if site.navigation %}
+	<center><h1>{{site.title}}</h1></center>
     {% endif %}
