@@ -2,11 +2,26 @@
 <div class="container p-3">
     <div class="card">
         <div class="card-header leader">
-            Header
+            Sample Header
         </div>
         <div class="card-body">
-            Body
+            This is sample content.
+            Value of <span class="text-muted">show_events</span> is: <span class="text-secondary">{{data.show_events}}</span>
+
         </div>
     </div>
+    {% if data.show_events %}
+    {% for event in data.events %}
+    <div class="card">
+        <div class="card-header">
+            {{event.name}}
+        </div>
+        <div class="card-body">
+            Venue: {{event.venue}},
+            Time: {{event.time}}
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
 </div>
 {% include "footer.html" %}

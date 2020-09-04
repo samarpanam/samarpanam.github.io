@@ -5,7 +5,13 @@
             Contact
         </div>
         <div class="card-body">
-            ...
+            <ul class="list-group">
+            {% for contact in data.contacts %}
+                <li class="list-group-item">
+                    {{contact.name}} <pre>{{contact.email}}</pre>
+                </li>
+            {% endfor %}
+            </ul>
         </div>
     </div>
 </div>

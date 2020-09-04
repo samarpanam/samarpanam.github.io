@@ -12,6 +12,7 @@ import jinja2
 from indic_transliteration.sanscript import transliterate, DEVANAGARI, IAST
 
 import config
+import data
 
 ###############################################################################
 
@@ -46,12 +47,7 @@ def render_page(page, **kwargs):
     global environment
     template_path = f'{page}.html'
     template = environment.get_template(template_path)
-
-    data = {
-        'active_page': page,
-        'subtitle': config.pages[page]
-    }
-    return template.render(data=data, **kwargs)
+    return template.render(data=data.pages[page], active_page=page, **kwargs)
 
 
 def build_website(pages, **kwargs):
@@ -75,12 +71,12 @@ if __name__ == '__main__':
 
     p = argparse.ArgumentParser(description=desc)
     p.add_argument("--page", action='append',
-                   help="Page(s) to build", default=config.pages)
+                   help="Page(s) to build", default=config.build)
     p.add_argument("--launch", action='store_true',
                    help="Launch")
     args = vars(p.parse_args())
 
-    build_website(args['page'], site=config.site)
+    build_website(args['page'], site=data.site)
     if args['launch']:
         import http.server
         import webbrowser
