@@ -9,7 +9,7 @@
             {% for contact in data.contacts %}
                 <li class="list-group-item">
 					{{contact.name}}, {{contact.institution}} <br>
-					Email: <code>{{contact.email}}</code>
+					Email: <a href="mailto:{{contact.email}}"><code>{{contact.email}}</code></a>
                 </li>
             {% endfor %}
             </ul>
