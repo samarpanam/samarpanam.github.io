@@ -9,4 +9,5 @@ Created on Fri Sep 04 00:20:48 2020
 source_dir = 'src'
 output_dir = 'www'
 
-build = ['index', 'about', 'contact']
+build = ['index', 'about', 'contact', 'events', 'members']
+

@@ -1,5 +1,13 @@
 {% include "header.html" %}
 <div class="container p-3">
+	<span style="font-weight:bold">samarpaṇam (समर्पणम्)</span>
+	is a group of Sanskrit-minded individuals from technological institutes
+	whose aim is to revive the culture of studying technical content written in
+	or using Sanskrit. 
+	<br>
+	The term 'samarpaṇam (समर्पणम्)' is formed of two words
+	<span style="font-style:italic">'samskritaya arpaṇam (संस्कृताय अर्पणम्)'</span>
+   	that means dedicating to/for the sake of Samskrit.
 	<!--
     <div class="card">
         <div class="card-header leader">
@@ -12,19 +20,5 @@
         </div>
     </div>
 	-->
-    {% if data.show_events %}
-    {% for event in data.events %}
-    <div class="card">
-        <div class="card-header">
-            {{event.name}}
-        </div>
-        <div class="card-body">
-            Date: {{event.date}},
-            Time: {{event.time}},
-            Venue: {{event.venue}}
-        </div>
-    </div>
-    {% endfor %}
-    {% endif %}
 </div>
 {% include "footer.html" %}

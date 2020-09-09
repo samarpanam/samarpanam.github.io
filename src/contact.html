@@ -2,13 +2,14 @@
 <div class="container p-3">
     <div class="card">
         <div class="card-header leader">
-            Contact
+			{{data.title}}
         </div>
         <div class="card-body">
             <ul class="list-group">
             {% for contact in data.contacts %}
                 <li class="list-group-item">
-                    {{contact.name}} <pre>{{contact.email}}</pre>
+					{{contact.name}}, {{contact.institution}} <br>
+					Email: <code>{{contact.email}}</code>
                 </li>
             {% endfor %}
             </ul>
