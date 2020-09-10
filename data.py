@@ -8,6 +8,13 @@ Created on Fri Sep 04 09:21:07 2020
 
 ###############################################################################
 
+phrases = {
+    'name': 'समर्पणम्',
+    'expansion': 'संस्कृताय अर्पणम्'
+}
+
+###############################################################################
+
 site = {
     'title': 'samarpaṇam (समर्पणम्)',
     'copyright': 'samarpaṇam',
@@ -25,10 +32,16 @@ site = {
 pages = {}
 
 pages['index'] = {
-    'title': '{{"समर्पणम्"|iast}} (समर्पणम्)',
-    'term': '{{"समर्पणम्"|iast}} (समर्पणम्)',
-    'expansion': '{{"संस्कृताय अर्पणम्"|iast}} (संस्कृताय अर्पणम्)',
-    'body': 'A group of Sanskrit-minded individuals from technological institutes whose aim is to revive the culture of studying technical content written in or using Sanskrit.  <br> The term \'{{"समर्पणम्"|iast}} (समर्पणम्)\' \'{{data.term}}\' is formed of two words <span style="font-style:italic">{{"संस्कृताय अर्पणम्"|iast}} (संस्कृताय अर्पणम्)</span> {{data.expansion}} that means dedicating to/for the sake of Samskrit.'
+    'title': f'iast({phrases["name"]}) ({phrases["name"]})',
+    'body': (
+        'A group of Sanskrit-minded individuals from technological institutes '
+        'whose aim is to revive the culture of studying technical content '
+        'written in or using Sanskrit.<br>'
+        f'The term \'iast({phrases["name"]}) ({phrases["name"]})\' is formed '
+        f'of two words <span class="font-italic">iast({phrases["expansion"]}) '
+        f'({phrases["expansion"]})</span> that means dedicating to/for '
+        'the sake of Samskrit.'
+    )
 }
 
 pages['events'] = {

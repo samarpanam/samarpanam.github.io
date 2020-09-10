@@ -6,6 +6,7 @@ Created on Fri Sep 04 00:14:28 2020
 @author: Hrishikesh Terdalkar
 """
 
+import re
 import os
 
 import jinja2
@@ -15,6 +16,28 @@ import config
 import data
 
 ###############################################################################
+
+
+def re_iast(matchobj):
+    return transliterate(matchobj.group(1), DEVANAGARI, IAST)
+
+
+def re_devangari(matchobj):
+    return transliterate(matchobj.group(1), IAST,  DEVANAGARI)
+
+
+def filter_devanagari(input_text):
+    start = r"devanagari("
+    end = r")"
+    pattern = "%s(.*?)%s" % (re.escape(start), re.escape(end))
+    return re.sub(pattern, re_iast, input_text, flags=re.DOTALL)
+
+
+def filter_iast(input_text):
+    start = r"iast("
+    end = r")"
+    pattern = "%s(.*?)%s" % (re.escape(start), re.escape(end))
+    return re.sub(pattern, re_iast, input_text, flags=re.DOTALL)
 
 
 def devanagari(text):
@@ -37,8 +60,8 @@ environment = jinja2.Environment(
 ###############################################################################
 # Register Filters
 
-environment.filters['devanagari'] = devanagari
-environment.filters['iast'] = iast
+environment.filters['devanagari'] = filter_devanagari
+environment.filters['iast'] = filter_iast
 
 ###############################################################################
 
