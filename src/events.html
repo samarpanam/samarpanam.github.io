@@ -1,0 +1,18 @@
+{% include "header.html" %}
+<div class="container p-3">
+    {% if data.show_events %}
+    {% for event in data.events %}
+    <div class="card">
+        <div class="card-header">
+			<b>{{event.name}}</b>
+        </div>
+        <div class="card-body">
+			Date: {{event.date}} <br>
+			Time: {{event.time}} <br>
+			Venue: {{event.venue}} <br>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% include "footer.html" %}

@@ -1,0 +1,79 @@
+{% include "header.html" %}
+<div class="container p-3">
+	<table>
+		<tr>
+			<td style="vertical-align:top;">
+				<div class="card">
+				    <div class="card-header leader">
+						{{data.title}}
+				    </div>
+				    <div class="card-body">
+				        <ul class="list-group">
+				        {% for contact in data.members %}
+				            <li class="list-group-item">
+								{{contact.name}}, {{contact.institution}} <br>
+								Email: <a href="mailto:{{contact.email}}"><code>{{contact.email}}</code></a>
+				            </li>
+				        {% endfor %}
+				        </ul>
+				    </div>
+				</div>
+			</td>
+			<td>
+				&nbsp;
+				&nbsp;
+			</td>
+			<td style="vertical-align:top;">
+			    <div class="card">
+			        <div class="card-header leader">
+						{{data.subtitle}}
+			        </div>
+			        <div class="card-body">
+			            <ul class="list-group">
+			            {% for mentor in data.mentors %}
+			                <li class="list-group-item">
+								{{mentor.name}}, {{mentor.institution}} <br>
+								Email: <a href="mailto:{{mentor.email}}"><code>{{mentor.email}}</code></a>
+			                </li>
+			            {% endfor %}
+			            </ul>
+			        </div>
+			    </div>
+			</td>
+		</tr>
+	</table>
+	<!--
+    <div class="card">
+        <div class="card-header leader">
+			{{data.title}}
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+            {% for contact in data.members %}
+                <li class="list-group-item">
+					{{contact.name}}, {{contact.institution}} <br>
+					Email: <a href="mailto:{{contact.email}}"><code>{{contact.email}}</code></a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+	<br>
+    <div class="card">
+        <div class="card-header leader">
+			{{data.subtitle}}
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+            {% for mentor in data.mentors %}
+                <li class="list-group-item">
+					{{mentor.name}}, {{mentor.institution}} <br>
+					Email: <a href="mailto:{{mentor.email}}"><code>{{mentor.email}}</code></a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+	-->
+</div>
+{% include "footer.html" %}
