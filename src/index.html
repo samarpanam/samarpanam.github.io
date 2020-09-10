@@ -1,15 +1,24 @@
 {% include "header.html" %}
 <div class="container p-3">
     <div class="card-header">
-		<span style="font-weight:bold">samarpaṇam (समर्पणम्)</span>
+		<!--
+		<span style="font-weight:bold">{{"समर्पणम्"|iast}} (समर्पणम्)</span>
+		-->
+		<span style="font-weight:bold">{{data.title}}</span>
+	</div>
+    <div class="card-body">
+		{{data.body}}
 	</div>
     <div class="card-body">
 		A group of Sanskrit-minded individuals from technological institutes
 		whose aim is to revive the culture of studying technical content
 		written in or using Sanskrit. 
 		<br>
-		The term 'samarpaṇam (समर्पणम्)' is formed of two words
-	   	<span style="font-style:italic">samskritaya arpaṇam (संस्कृताय अर्पणम्)</span>
+		The term '{{"समर्पणम्"|iast}} (समर्पणम्)'
+		'{{data.term}}'
+		is formed of two words
+		<span style="font-style:italic">{{"संस्कृताय अर्पणम्"|iast}} (संस्कृताय अर्पणम्)</span>
+		{{data.expansion}}
 		that means dedicating to/for the sake of Samskrit.
 	</div>
 </div>

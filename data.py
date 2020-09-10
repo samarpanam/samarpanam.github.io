@@ -25,7 +25,10 @@ site = {
 pages = {}
 
 pages['index'] = {
-    'title': 'samarpaṇam (समर्पणम्) is a group of Sanskrit-minded people',
+    'title': '{{"समर्पणम्"|iast}} (समर्पणम्)',
+    'term': '{{"समर्पणम्"|iast}} (समर्पणम्)',
+    'expansion': '{{"संस्कृताय अर्पणम्"|iast}} (संस्कृताय अर्पणम्)',
+    'body': 'A group of Sanskrit-minded individuals from technological institutes whose aim is to revive the culture of studying technical content written in or using Sanskrit.  <br> The term \'{{"समर्पणम्"|iast}} (समर्पणम्)\' \'{{data.term}}\' is formed of two words <span style="font-style:italic">{{"संस्कृताय अर्पणम्"|iast}} (संस्कृताय अर्पणम्)</span> {{data.expansion}} that means dedicating to/for the sake of Samskrit.'
 }
 
 pages['events'] = {
